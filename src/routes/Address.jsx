@@ -17,22 +17,37 @@ export default function Address() {
   };
 
   const { client } = useSelector((state) => state.clientData);
-  const clientName = client?.first_name + " " + client?.last_name;
+  // const clientName = `${(
+  //   (client?.first_name?.[0] ?? "") + (client?.last_name?.[0] ?? "")
+  // ).toUpperCase()} ${client?.unique_id}`;
+  const fullName = `${client?.first_name ?? ""} ${
+    client?.last_name ?? ""
+  }`.trim();
+
+  const initials =
+    fullName
+      .split(" ")
+      .filter(Boolean)
+      .map((name) => name[0].toUpperCase())
+      .join("") + client?.unique_id;
 
   // Special grouped row for street, address line 2, and hint
   const streetRow = {
     label: t("addressFields.street"),
     values: [
-      { key: "shipping_address", value: `${settings?.shipping_address} ${client?.unique_id}` },
+      {
+        key: "shipping_address",
+        value: `${settings?.shipping_address} `,
+      },
       // { key: "unique_id", value: client?.unique_id },
       { key: "address_hint", value: settings?.address_hint, isHint: true },
     ],
   };
-console.log(settings);
+  console.log(settings);
 
   // Other address fields
   const otherFields = [
-    { label: t("addressFields.recipient"), value: clientName },
+    { label: t("addressFields.recipient"), value: initials },
     { label: t("addressFields.district"), value: settings?.district },
     { label: t("addressFields.city"), value: settings?.city },
     { label: t("addressFields.province"), value: settings?.province },
@@ -94,7 +109,7 @@ console.log(settings);
               <li className="street-row">
                 <span>{streetRow.label}:</span>
                 <div className="street-values">
-                  {streetRow.values.map((item, idx) => (
+                  {streetRow.values.map((item, idx) =>
                     item.isHint ? (
                       <div
                         key={idx}
@@ -123,7 +138,7 @@ console.log(settings);
                         </b>
                       </div>
                     )
-                  ))}
+                  )}
                 </div>
               </li>
 
@@ -149,8 +164,6 @@ console.log(settings);
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }
