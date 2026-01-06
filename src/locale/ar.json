@@ -77,7 +77,9 @@
     "emailNotFound": "البريد الالكتروني غير موجود",
     "didnotReceiveCode": "لم تستلم الرمز؟",
     "resendCode": "اعادة الارسال",
-    "acceptTermsWarning": "يرجى قبول الشروط والأحكام للتسجيل"
+    "acceptTermsWarning": "يرجى قبول الشروط والأحكام للتسجيل",
+    "address": "العنوان",
+    "enterAddress": "أدخل عنوانك"
   },
   "validation": {
     "required": "هذا الحقل مطلوب",
@@ -177,7 +179,7 @@
     "phone": "رقم الهاتف",
     "email": "البريد الإلكتروني",
     "addressLine2": "العنوان - السطر الثاني",
-    "hint":"ملاحظة"
+    "hint": "ملاحظة"
   },
   "common": {
     "copy": "نسخ",

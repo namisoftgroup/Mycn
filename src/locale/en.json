@@ -77,7 +77,9 @@
     "emailNotFound": "Email address not found",
     "didnotReceiveCode": "Didn't receive the code?",
     "resendCode": "Resend Code",
-    "acceptTermsWarning": "Please accept the terms and conditions to sign up"
+    "acceptTermsWarning": "Please accept the terms and conditions to sign up",
+    "address": "Address",
+    "enterAddress": "Enter your address"
   },
   "validation": {
     "required": "This field is required",
@@ -177,7 +179,7 @@
     "phone": "Phone",
     "email": "Email",
     "addressLine2": "Address Line 2",
-    "hint":"hint"
+    "hint": "hint"
   },
   "common": {
     "copy": "Copy",

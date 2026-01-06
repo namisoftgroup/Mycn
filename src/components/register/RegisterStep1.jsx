@@ -20,6 +20,8 @@ export default function RegisterStep1({
   const { t } = useTranslation();
   const { data: countries, isLoading: isCountriesLoading } = useGetCountries();
 
+  console.log(errors);
+
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit();
@@ -45,7 +47,6 @@ export default function RegisterStep1({
           autoComplete="family-name"
         />
       </div>
-
       <div className="form_group">
         <InputField
           label={t("auth.email")}
@@ -66,7 +67,6 @@ export default function RegisterStep1({
           autoComplete="tel"
         />
       </div>
-
       <div className="form_group">
         <SelectField
           label={t("auth.country")}
@@ -79,8 +79,17 @@ export default function RegisterStep1({
           error={errors.country_id?.message}
           isLoading={isCountriesLoading}
         />
+      </div>{" "}
+      <div className="form_group">
+        <InputField
+          label={t("auth.address")}
+          placeholder={t("auth.enterAddress")}
+          type="text"
+          {...register("address")}
+          error={errors.address?.message}
+          autoComplete="address-line1"
+        />
       </div>
-
       <div className="form_group">
         <PasswordField
           label={t("auth.password")}
@@ -97,7 +106,6 @@ export default function RegisterStep1({
           autoComplete="new-password"
         />
       </div>
-
       <Form.Check
         {...register("terms")}
         type="checkbox"
@@ -110,13 +118,11 @@ export default function RegisterStep1({
           </>
         }
       />
-
       <SubmitButton
         text={t("auth.signUp")}
         loading={isLoading}
         disabled={isLoading}
       />
-
       <p className="note mt-3">
         {t("auth.alreadyHaveAnAccount")}{" "}
         <Link to="/signin">{t("auth.signIn")}</Link>

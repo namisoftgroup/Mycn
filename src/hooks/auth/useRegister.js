@@ -47,7 +47,7 @@ export default function useRegister(t, setStep) {
       .required(t("validation.required"))
       .email(t("validation.email"))
       .max(63, t("validation.max", { max: 63 })),
-
+    address: yup.string().required(t("validation.required")),
     password: yup
       .string()
       .required(t("validation.required"))
