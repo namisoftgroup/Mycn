@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import useGetSettings from "../hooks/settings/useGetSettings";
+import DOMPurify from "dompurify";
 
 export default function Address() {
   const { t } = useTranslation();
-  const { data: settings } = useGetSettings();
+  const { data: settings, isLoading } = useGetSettings();
   const [copiedField, setCopiedField] = useState(null);
   const [hoveredHint, setHoveredHint] = useState(false);
 
@@ -17,9 +18,7 @@ export default function Address() {
   };
 
   const { client } = useSelector((state) => state.clientData);
-  // const clientName = `${(
-  //   (client?.first_name?.[0] ?? "") + (client?.last_name?.[0] ?? "")
-  // ).toUpperCase()} ${client?.unique_id}`;
+
   const fullName = `${client?.first_name ?? ""} ${
     client?.last_name ?? ""
   }`.trim();
@@ -43,7 +42,6 @@ export default function Address() {
       { key: "address_hint", value: settings?.address_hint, isHint: true },
     ],
   };
-  console.log(settings);
 
   // Other address fields
   const otherFields = [
@@ -57,14 +55,23 @@ export default function Address() {
     { label: t("addressFields.email"), value: settings?.email },
   ];
 
-  const addressContent = t("profile.address", { returnObjects: true });
+  // const addressContent = t("profile.add ress", { returnObjects: true });
 
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
+  const sanitizedWelcomeMessage = settings?.welcome_message
+    ? DOMPurify.sanitize(settings.welcome_message)
+    : "";
+  console.log(settings?.welcome_message);
+  console.log(sanitizedWelcomeMessage);
   return (
     <div className="address">
       <div className="row">
         <div className="col-lg-6 col-12 p-2">
           <div className="content">
-            <h3>{t("profile.welcomeText")}</h3>
+            {/* <h3>{t("profile.welcomeText")}</h3>
             {addressContent.sections.map((section, index) => (
               <p key={index}>{section}</p>
             ))}
@@ -76,15 +83,19 @@ export default function Address() {
                 ))}
               </ul>
               <p>{addressContent.benefits.footer}</p>
-            </div>
+            </div> */}
+            <div
+              className="welcome-message"
+              dangerouslySetInnerHTML={{ __html: sanitizedWelcomeMessage }}
+            />
           </div>
         </div>
         <div className="col-lg-6 col-12 p-2">
           <div className="address_card">
-            <h4>
+            {/* <h4>
               {addressContent.title}{" "}
               <img src="/images/logo.svg" alt="MYCN Logo" />
-            </h4>
+            </h4> */}
             <ul>
               {/* Recipient Field */}
               {otherFields.slice(0, 1).map((field, index) => (

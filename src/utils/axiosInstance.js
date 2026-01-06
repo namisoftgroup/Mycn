@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Cookies } from "react-cookie";
 
 axios.defaults.baseURL = "https://admin.mycn.online/api";
 axios.defaults.headers.common["Content-Type"] = "application/json";
