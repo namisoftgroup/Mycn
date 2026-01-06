@@ -15,7 +15,8 @@
     "myAddresses": "عناويني",
     "dashboard": "لوحة التحكم",
     "newPackages": "شحنات جديدة",
-    "myAccount": "حسابي"
+    "myAccount": "حسابي",
+    "messages": "الرسائل"
   },
   "errorPage": {
     "pageNotFoundTitle": "الصفحة غير موجودة",
@@ -407,6 +408,8 @@
   "transportationTitle": "مجموعة متنوعة من وسائل النقل الموثوقة لكل شحنة",
   "empty_shipments": "هنا سترى كل شحناتك.",
   "empty_notifications": "هنا سترى كل الاشعارات.",
+  "empty_messages": "هنا سترى كل رسائلك.",
+
   "expected": {
     "addSuccess": "تمت اضافة الحالة المتوقعة بنجاح",
     "editSuccess": "تم تعديل الحالة المتوقعة بنجاح",

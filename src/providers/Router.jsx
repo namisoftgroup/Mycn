@@ -26,6 +26,7 @@ import NewPackages from "../routes/NewPackages";
 import HowWorks from "../routes/HowWorks";
 import ResetPassword from "../routes/ResetPassword";
 import ExpectedPackages from "../routes/ExpectedPackages";
+import Messages from "../routes/Messages";
 
 export const router = createBrowserRouter([
   {
@@ -117,6 +118,10 @@ export const router = createBrowserRouter([
           {
             path: "my-addresses",
             element: <MyAddresses />,
+          },
+          {
+            path: "messages",
+            element: <Messages />,
           },
         ],
       },

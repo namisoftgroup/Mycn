@@ -15,7 +15,8 @@
     "myAddresses": "My Addresses",
     "dashboard": "Dashboard",
     "newPackages": "New Packages",
-    "myAccount": "My Account"
+    "myAccount": "My Account",
+    "messages": "Messages"
   },
   "errorPage": {
     "pageNotFoundTitle": "Page Not Found",
@@ -407,6 +408,7 @@
   "transportationTitle": "A variety of trusted transportation methods for every shipment",
   "empty_shipments": "Here you will be able to see all your shipments.",
   "empty_notifications": "Here you will be able to see all your notifications.",
+  "empty_messages": "Here you will be able to see all your messages.",
   "expected": {
     "addSuccess": "Expected package added successfully",
     "editSuccess": "Expected package edited successfully",

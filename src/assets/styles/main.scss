@@ -17,7 +17,8 @@ body {
   @import "./scss/profile";
   @import "./scss/shipping_calculator";
   @import "./scss/services";
-  @import "./scss/my_transactions.scss";
+  @import "./scss/my_transactions";
+  @import "./scss/messages";
 
   main {
     min-height: calc(100dvh - 300px);
@@ -190,4 +191,3 @@ body {
   pointer-events: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-

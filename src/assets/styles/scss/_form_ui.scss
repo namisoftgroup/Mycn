@@ -52,6 +52,9 @@
 
     textarea {
       height: 122px;
+      &:focus {
+        border: 1px solid $input_stroke !important;
+      }
     }
 
     label {
@@ -237,5 +240,11 @@
     span {
       color: $main;
     }
+  }
+}
+textarea {
+  height: 122px;
+  &:focus {
+    border: 1px solid $input_stroke !important;
   }
 }

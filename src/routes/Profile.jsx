@@ -60,9 +60,13 @@ export default function Profile() {
                   <i className="fa-regular fa-location-dot"></i>
                   {t("header.myAddresses")}
                 </NavLink>
+                <NavLink to="messages" className="nav_link">
+                  <i className="fa-regular fa-location-dot"></i>
+                  {t("header.messages")}
+                </NavLink>
 
                 <div className="nav_link" onClick={logout}>
-                  <i className="fa-regular fa-sign-out-alt"></i>
+                  <i className="fa-regular fa-email"></i>
                   {t("header.logout")}
                 </div>
               </div>
